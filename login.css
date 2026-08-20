@@ -40,7 +40,7 @@ body {
             rgba(0, 0, 0, 0.30),
             rgba(80, 20, 0, 0.40)
         ),
-        url("image/ganpati-bg.jpg");
+        url("ganpati-bg.jpg");
 
     background-size: cover;
     background-position: center;
