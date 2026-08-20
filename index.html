@@ -2,15 +2,16 @@
 <html lang="mr">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>आराधनाचा राजा | श्री आराधना गणेश मंडळ</title>
+    <title>Ganpati Bappa Moraya</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
     <link rel="preconnect"
           href="https://fonts.gstatic.com"
@@ -22,10 +23,6 @@
 
     <style>
 
-        /* =====================================================
-           RESET
-        ===================================================== */
-
         * {
             margin: 0;
             padding: 0;
@@ -35,12 +32,16 @@
 
         html,
         body {
+
             width: 100%;
-            min-height: 100%;
+            height: 100%;
+
+            overflow: hidden;
         }
 
 
         body {
+
             font-family:
                 "Noto Sans Devanagari",
                 sans-serif;
@@ -50,31 +51,24 @@
             color: white;
 
             position: relative;
-
-            overflow-x: hidden;
-
-            overflow-y: auto;
         }
 
 
-        /* =====================================================
-           BACKGROUND
-        ===================================================== */
 
         .background {
+
             position: fixed;
 
             inset: 0;
 
-            width: 100%;
-            height: 100vh;
-
             background:
+
                 linear-gradient(
                     rgba(35, 5, 0, 0.55),
                     rgba(35, 5, 0, 0.75)
                 ),
-                url("ganpati-bg.jpg");
+
+                url("images/ganpati-bg.jpg");
 
             background-size: cover;
 
@@ -85,8 +79,7 @@
             z-index: -3;
 
             animation:
-                backgroundZoom
-                15s
+                backgroundZoom 15s
                 ease-in-out
                 infinite
                 alternate;
@@ -105,37 +98,30 @@
         }
 
 
-        /* =====================================================
-           OVERLAY
-        ===================================================== */
+     
 
         .overlay {
+
             position: fixed;
 
             inset: 0;
-
-            width: 100%;
-            height: 100vh;
 
             background:
                 radial-gradient(
                     circle at center,
                     transparent 10%,
-                    rgba(0, 0, 0, 0.25) 55%,
-                    rgba(0, 0, 0, 0.75) 100%
+                    rgba(0,0,0,.25) 55%,
+                    rgba(0,0,0,.75) 100%
                 );
 
             z-index: -2;
-
-            pointer-events: none;
         }
 
 
-        /* =====================================================
-           PARTICLES
-        ===================================================== */
+       
 
         .particles {
+
             position: fixed;
 
             inset: 0;
@@ -147,6 +133,7 @@
 
 
         .particle {
+
             position: absolute;
 
             width: 4px;
@@ -170,6 +157,7 @@
         @keyframes particleMove {
 
             from {
+
                 transform:
                     translateY(100vh);
 
@@ -185,6 +173,7 @@
             }
 
             to {
+
                 transform:
                     translateY(-10vh);
 
@@ -193,17 +182,11 @@
         }
 
 
-        /* =====================================================
-           MAIN SCREEN
-        ===================================================== */
 
         .main-screen {
 
             width: 100%;
-
-            min-height: 100vh;
-
-            min-height: 100dvh;
+            height: 100dvh;
 
             display: flex;
 
@@ -211,7 +194,7 @@
 
             align-items: center;
 
-            padding: 20px 15px;
+            padding: 15px;
 
             position: relative;
 
@@ -235,19 +218,17 @@
         }
 
 
-        /* =====================================================
-           OM
-        ===================================================== */
+      
 
         .om {
 
-            font-size: 55px;
+            font-size: clamp(
+                55px,
+                5vh,
+                30px
+            );
 
             color: #ffd76a;
-
-            line-height: 1;
-
-            margin-bottom: 25px;
 
             text-shadow:
 
@@ -255,9 +236,10 @@
 
                 0 0 25px #ff8c00;
 
+            margin-bottom: 5px;
+
             animation:
-                omGlow
-                2s
+                omGlow 2s
                 infinite
                 alternate;
         }
@@ -280,9 +262,7 @@
         }
 
 
-        /* =====================================================
-           MAIN TITLE
-        ===================================================== */
+     
 
         .main-title {
 
@@ -290,8 +270,11 @@
                 "Great Vibes",
                 cursive;
 
-            font-size:
-                clamp(50px, 9vw, 85px);
+            font-size: clamp(
+                50px,
+                9vw,
+                85px
+            );
 
             color: #ffd66b;
 
@@ -302,24 +285,21 @@
                 0 3px 5px #000,
 
                 0 0 20px
-                rgba(255, 170, 0, 0.6);
+                rgba(255,170,0,.6);
 
-            margin-bottom: 12px;
+            margin-bottom: 5px;
         }
 
 
-        /* =====================================================
-           SUB TITLE
-        ===================================================== */
-
         .sub-title {
 
-            font-family:
-                Cinzel,
-                serif;
+            font-family: Cinzel, serif;
 
-            font-size:
-                clamp(13px, 2vw, 17px);
+            font-size: clamp(
+                13px,
+                2vw,
+                17px
+            );
 
             letter-spacing: 3px;
 
@@ -329,9 +309,7 @@
         }
 
 
-        /* =====================================================
-           MENU
-        ===================================================== */
+     
 
         .menu {
 
@@ -349,19 +327,21 @@
 
             width: 100%;
 
-            min-height: 58px;
+            height: 58px;
 
             border-radius: 18px;
 
             border:
+
                 1px solid
-                rgba(255, 210, 100, 0.5);
+                rgba(255,210,100,.5);
 
             background:
+
                 linear-gradient(
                     135deg,
-                    rgba(255, 184, 50, 0.95),
-                    rgba(214, 82, 0, 0.95)
+                    rgba(255,184,50,.95),
+                    rgba(214,82,0,.95)
                 );
 
             color: #421600;
@@ -379,15 +359,13 @@
             box-shadow:
 
                 0 8px 25px
-                rgba(0, 0, 0, 0.35),
+                rgba(0,0,0,.35),
 
                 0 0 20px
-                rgba(255, 160, 30, 0.2);
+                rgba(255,160,30,.2);
 
             transition:
-                0.3s;
-
-            padding: 8px 15px;
+                .3s;
         }
 
 
@@ -400,17 +378,17 @@
             box-shadow:
 
                 0 12px 30px
-                rgba(0, 0, 0, 0.45),
+                rgba(0,0,0,.45),
 
                 0 0 30px
-                rgba(255, 180, 40, 0.4);
+                rgba(255,180,40,.4);
         }
 
 
         .menu-btn:active {
 
             transform:
-                scale(0.97);
+                scale(.97);
         }
 
 
@@ -420,44 +398,30 @@
 
             font-size: 12px;
 
-            font-family:
-                Cinzel,
-                serif;
+            font-family: Cinzel, serif;
 
             letter-spacing: 1px;
 
-            opacity: 0.75;
+            opacity: .75;
 
             margin-top: 2px;
         }
 
 
-        /* =====================================================
-           FOOTER
-        ===================================================== */
+      
 
         .footer {
 
-            margin-top: 22px;
+            margin-top: 18px;
 
-            color: #ffd66b;
+            color: #ead4a0;
 
-            font-size: 22px;
+            font-size: 11px;
 
-            line-height: 1.5;
-
-            font-weight: 700;
-
-            text-shadow:
-                0 2px 5px #000;
-
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
 
 
-        /* =====================================================
-           FIRST POPUP
-        ===================================================== */
 
         .popup {
 
@@ -465,11 +429,8 @@
 
             inset: 0;
 
-            width: 100%;
-            height: 100%;
-
             background:
-                rgba(15, 2, 0, 0.88);
+                rgba(15,2,0,.88);
 
             backdrop-filter:
                 blur(10px);
@@ -486,11 +447,10 @@
 
             visibility: hidden;
 
-            transform:
-                scale(1.08);
+            transform: scale(1.08);
 
             transition:
-                0.4s;
+                .4s;
 
             z-index: 50;
         }
@@ -502,17 +462,18 @@
 
             visibility: visible;
 
-            transform:
-                scale(1);
+            transform: scale(1);
         }
 
 
+    
+
         .popup-card {
 
-            width:
-                min(550px, 94vw);
-
-            max-height: 94vh;
+            width: min(
+                550px,
+                94vw
+            );
 
             max-height: 94dvh;
 
@@ -526,42 +487,42 @@
             border-radius: 28px;
 
             background:
+
                 linear-gradient(
                     145deg,
-                    rgba(75, 12, 0, 0.97),
-                    rgba(25, 3, 0, 0.97)
+                    rgba(75,12,0,.97),
+                    rgba(25,3,0,.97)
                 );
 
             border:
+
                 1px solid
-                rgba(255, 210, 100, 0.55);
+                rgba(255,210,100,.55);
 
             box-shadow:
 
                 0 0 60px
-                rgba(255, 160, 20, 0.25);
+                rgba(255,160,20,.25);
         }
 
 
-        /* =====================================================
-           GANPATI IMAGE
-        ===================================================== */
 
         .popup-ganpati {
 
-            width:
-                min(220px, 45vw);
+            width: min(
+                220px,
+                45vw
+            );
 
             max-height: 260px;
 
             object-fit: contain;
 
-            border-radius: 15px;
-
             filter:
+
                 drop-shadow(
                     0 0 20px
-                    rgba(255, 190, 60, 0.7)
+                    rgba(255,190,60,.7)
                 );
 
             animation:
@@ -589,10 +550,6 @@
         }
 
 
-        /* =====================================================
-           POPUP TITLE
-        ===================================================== */
-
         .popup-title {
 
             font-family:
@@ -601,10 +558,13 @@
 
             color: #ffd66b;
 
-            font-size:
-                clamp(38px, 7vw, 58px);
+            font-size: clamp(
+                38px,
+                7vw,
+                58px
+            );
 
-            margin: 10px 0 5px;
+            margin: 5px 0;
         }
 
 
@@ -612,9 +572,7 @@
 
             color: #ffe6a0;
 
-            font-family:
-                Cinzel,
-                serif;
+            font-family: Cinzel, serif;
 
             font-size: 14px;
 
@@ -622,9 +580,7 @@
         }
 
 
-        /* =====================================================
-           EVENT BUTTONS
-        ===================================================== */
+      
 
         .event-buttons {
 
@@ -646,11 +602,13 @@
             border-radius: 16px;
 
             border:
+
                 1px solid
-                rgba(255, 205, 90, 0.35);
+                rgba(255,205,90,.35);
 
             background:
-                rgba(255, 180, 40, 0.12);
+
+                rgba(255,180,40,.12);
 
             color: #ffd66b;
 
@@ -665,23 +623,21 @@
             font-weight: 600;
 
             transition:
-                0.3s;
-
-            padding: 8px;
+                .3s;
         }
 
 
         .event-btn:hover {
 
             background:
-                rgba(255, 180, 40, 0.25);
+                rgba(255,180,40,.25);
 
             transform:
                 translateY(-3px);
 
             box-shadow:
                 0 8px 20px
-                rgba(255, 160, 20, 0.2);
+                rgba(255,160,20,.2);
         }
 
 
@@ -689,9 +645,7 @@
 
             display: block;
 
-            font-family:
-                Cinzel,
-                serif;
+            font-family: Cinzel, serif;
 
             font-size: 10px;
 
@@ -701,9 +655,6 @@
         }
 
 
-        /* =====================================================
-           MEDIA POPUP
-        ===================================================== */
 
         .media-popup {
 
@@ -711,11 +662,8 @@
 
             inset: 0;
 
-            width: 100%;
-            height: 100%;
-
             background:
-                rgba(10, 1, 0, 0.92);
+                rgba(10,1,0,.92);
 
             backdrop-filter:
                 blur(10px);
@@ -735,7 +683,7 @@
             z-index: 100;
 
             transition:
-                0.3s;
+                .3s;
         }
 
 
@@ -749,10 +697,10 @@
 
         .media-card {
 
-            width:
-                min(850px, 96vw);
-
-            max-height: 94vh;
+            width: min(
+                850px,
+                96vw
+            );
 
             max-height: 94dvh;
 
@@ -771,7 +719,7 @@
 
             border:
                 1px solid
-                rgba(255, 210, 100, 0.5);
+                rgba(255,210,100,.5);
 
             text-align: center;
         }
@@ -782,21 +730,14 @@
             color: #ffd66b;
 
             font-family:
-                "Noto Sans Devanagari",
-                sans-serif;
+                "Great Vibes",
+                cursive;
 
-            font-size:
-                clamp(22px, 5vw, 35px);
-
-            line-height: 1.4;
+            font-size: 45px;
 
             margin-bottom: 15px;
         }
 
-
-        /* =====================================================
-           EVENT IMAGE
-        ===================================================== */
 
         .event-image {
 
@@ -811,14 +752,8 @@
             margin-bottom: 15px;
 
             background: #000;
-
-            display: block;
         }
 
-
-        /* =====================================================
-           EVENT VIDEO
-        ===================================================== */
 
         .event-video {
 
@@ -831,37 +766,9 @@
             background: #000;
 
             display: block;
-
-            object-fit: contain;
         }
 
 
-        /* =====================================================
-           VIDEO ERROR MESSAGE
-        ===================================================== */
-
-        .video-error {
-
-            display: none;
-
-            margin-top: 10px;
-
-            padding: 10px;
-
-            border-radius: 10px;
-
-            background:
-                rgba(255, 80, 30, 0.15);
-
-            color: #ffd6a0;
-
-            font-size: 12px;
-        }
-
-
-        /* =====================================================
-           CLOSE BUTTON
-        ===================================================== */
 
         .close-btn {
 
@@ -887,7 +794,7 @@
                 sans-serif;
 
             transition:
-                0.3s;
+                .3s;
         }
 
 
@@ -899,18 +806,8 @@
         }
 
 
-        /* =====================================================
-           MOBILE
-        ===================================================== */
 
         @media (max-width: 600px) {
-
-            .main-screen {
-
-                padding:
-                    20px 12px;
-            }
-
 
             .main-content {
 
@@ -918,19 +815,9 @@
             }
 
 
-            .om {
-
-                font-size: 45px;
-
-                margin-bottom: 20px;
-            }
-
-
             .main-title {
 
-                font-size: 52px;
-
-                margin-bottom: 10px;
+                font-size: 55px;
             }
 
 
@@ -952,7 +839,7 @@
 
             .menu-btn {
 
-                min-height: 52px;
+                height: 52px;
 
                 border-radius: 15px;
 
@@ -963,14 +850,6 @@
             .menu-btn span {
 
                 font-size: 9px;
-            }
-
-
-            .footer {
-
-                font-size: 17px;
-
-                margin-top: 15px;
             }
 
 
@@ -1010,19 +889,9 @@
             }
 
 
-            .media-card {
-
-                padding: 15px;
-
-                border-radius: 20px;
-            }
-
-
             .media-title {
 
-                font-size: 22px;
-
-                margin-bottom: 12px;
+                font-size: 38px;
             }
 
 
@@ -1039,31 +908,18 @@
         }
 
 
-        /* =====================================================
-           SHORT SCREEN
-        ===================================================== */
 
         @media (max-height: 650px) {
 
-            .main-screen {
+            .main-title {
 
-                align-items: flex-start;
-
-                padding-top: 20px;
+                font-size: 55px;
             }
 
 
             .om {
 
-                font-size: 35px;
-
-                margin-bottom: 12px;
-            }
-
-
-            .main-title {
-
-                font-size: 48px;
+                font-size: 28px;
             }
 
 
@@ -1081,7 +937,7 @@
 
             .menu-btn {
 
-                min-height: 45px;
+                height: 45px;
 
                 font-size: 14px;
             }
@@ -1089,9 +945,7 @@
 
             .footer {
 
-                font-size: 14px;
-
-                margin-top: 10px;
+                display: none;
             }
 
 
@@ -1117,37 +971,33 @@
 <body>
 
 
-    <!-- =====================================================
-         BACKGROUND
-    ====================================================== -->
+    <!-- BACKGROUND -->
 
     <div class="background"></div>
 
     <div class="overlay"></div>
 
 
-    <!-- =====================================================
-         PARTICLES
-    ====================================================== -->
+    <!-- PARTICLES -->
 
-    <div class="particles" id="particles"></div>
+    <div class="particles"
+         id="particles">
+    </div>
 
-
-    <!-- =====================================================
-         MAIN SCREEN
-    ====================================================== -->
 
     <main class="main-screen">
 
         <div class="main-content">
 
             <div class="om">
+
                 ॐ
+
             </div>
 
 
             <h1 class="main-title">
-                गणपती बाप्पा मोरया
+                गणपती बाप्पा मोरया 
             </h1>
 
 
@@ -1205,26 +1055,23 @@
             </div>
 
 
-            <!-- FOOTER -->
-
-            <div class="footer">
-
+        <div class="footer">
                 ॥ श्री आराधना गणेश मंडळ ॥
-
-                <br>
-
+            <br>
                 चौधरीवाडा, न्हावी
-
-            </div>
-
         </div>
+
+        <style>
+            .footer {
+                font-size: 28px;
+                }
+        </style>
+
+    </div>
 
     </main>
 
 
-    <!-- =====================================================
-         GANPATI POPUP
-    ====================================================== -->
 
     <div
         class="popup"
@@ -1236,8 +1083,6 @@
                 ॥ श्री गणेशाय नमः ॥
             </div>
 
-
-            <!-- ROOT IMAGE PATH -->
 
             <img
                 src="ganpati-bg.jpg"
@@ -1298,9 +1143,7 @@
     </div>
 
 
-    <!-- =====================================================
-         MEDIA POPUP
-    ====================================================== -->
+   
 
     <div
         class="media-popup"
@@ -1312,12 +1155,10 @@
                 class="media-title"
                 id="mediaTitle">
 
-                आगमन सोहळा
+                आगमन सोहळा-12/09/2026
 
             </div>
 
-
-            <!-- EVENT IMAGE -->
 
             <img
                 id="eventImage"
@@ -1326,35 +1167,22 @@
                 alt="Event Image">
 
 
-            <!-- EVENT VIDEO -->
-
             <video
                 id="eventVideo"
                 class="event-video"
                 controls
-                playsinline
-                preload="metadata">
+                playsinline>
 
                 <source
                     id="videoSource"
                     src=""
                     type="video/mp4">
 
-                Your browser does not support video.
+                Your browser does not support
+                video.
 
             </video>
 
-
-            <div
-                id="videoError"
-                class="video-error">
-
-                ⚠️ व्हिडिओ उपलब्ध नाही किंवा व्हिडिओ फाइल GitHub वर अपलोड केलेली नाही.
-
-            </div>
-
-
-            <!-- CLOSE -->
 
             <button
                 class="close-btn"
@@ -1369,18 +1197,16 @@
     </div>
 
 
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
 
     <script>
 
-        /* =====================================================
-           PARTICLES
-        ====================================================== */
+
+     
 
         const particles =
-            document.getElementById("particles");
+            document.getElementById(
+                "particles"
+            );
 
 
         for (
@@ -1390,7 +1216,9 @@
         ) {
 
             const p =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
 
             p.className =
@@ -1402,11 +1230,13 @@
 
 
             p.style.animationDuration =
-                (5 + Math.random() * 8) + "s";
+                (5 + Math.random() * 8)
+                + "s";
 
 
             p.style.animationDelay =
-                Math.random() * 8 + "s";
+                Math.random() * 8
+                + "s";
 
 
             const size =
@@ -1425,14 +1255,14 @@
         }
 
 
-        /* =====================================================
-           GANPATI POPUP
-        ====================================================== */
+
 
         function openGanpatiPopup() {
 
             document
-                .getElementById("ganpatiPopup")
+                .getElementById(
+                    "ganpatiPopup"
+                )
                 .classList.add("active");
         }
 
@@ -1440,59 +1270,16 @@
         function closeGanpatiPopup() {
 
             document
-                .getElementById("ganpatiPopup")
+                .getElementById(
+                    "ganpatiPopup"
+                )
                 .classList.remove("active");
         }
 
 
-        /* =====================================================
-           MEDIA DATA
-        ====================================================== */
-
-        const mediaData = {
-
-            aagman: {
-
-                title:
-                    "आगमन सोहळा - १२-०९-२०२६ 🥁 शिवराज्य बँड, चांदवड",
-
-                image:
-                    "aagman.jpg",
-
-                video:
-                    "aagman.mp4"
-            },
-
-
-            visarjan: {
-
-                title:
-                    "विसर्जन सोहळा - २०-०९-२०२६ 🎵 रॉकस्टार बँड ७८, चांदवड",
-
-                image:
-                    "visarjan.jpg",
-
-                video:
-                    "visarjan.mp4"
-            }
-
-        };
-
-
-        /* =====================================================
-           OPEN MEDIA
-        ====================================================== */
+    
 
         function openMedia(type) {
-
-            const data =
-                mediaData[type];
-
-
-            if (!data) {
-                return;
-            }
-
 
             const popup =
                 document.getElementById(
@@ -1524,42 +1311,39 @@
                 );
 
 
-            const videoError =
-                document.getElementById(
-                    "videoError"
-                );
+            if (type === "aagman") {
+
+                title.innerHTML =
+                    "आगमन सोहळा - १२-०९-२०२६ 🥁 शिवराज्य बँड, चांदवड" ;
 
 
-            /* TITLE */
-
-            title.textContent =
-                data.title;
+                image.src =
+                    "aagman.jpg";
 
 
-            /* IMAGE */
+                source.src =
+                    "aagman.mp4";
 
-            image.src =
-                data.image;
-
-
-            /* VIDEO */
-
-            source.src =
-                data.video;
+            }
 
 
-            /* Hide previous error */
+            else if (type === "visarjan") {
 
-            videoError.style.display =
-                "none";
+                title.innerHTML =
+                    "विसर्जन सोहळा - २०-०९-२०२६ 🎵 रॉकस्टार बँड ७८, चांदवड";
 
 
-            /* Reload video */
+                image.src =
+                    "visarjan.jpg";
+
+
+                source.src =
+                    "visarjan.mp4";
+            }
+
 
             video.load();
 
-
-            /* Show popup */
 
             popup.classList.add(
                 "active"
@@ -1567,29 +1351,7 @@
         }
 
 
-        /* =====================================================
-           VIDEO ERROR
-        ====================================================== */
-
-        document
-            .getElementById("eventVideo")
-            .addEventListener(
-                "error",
-                function() {
-
-                    document
-                        .getElementById(
-                            "videoError"
-                        )
-                        .style.display =
-                        "block";
-                }
-            );
-
-
-        /* =====================================================
-           CLOSE MEDIA
-        ====================================================== */
+   
 
         function closeMedia() {
 
@@ -1608,18 +1370,12 @@
             video.pause();
 
 
-            video.currentTime = 0;
-
-
             popup.classList.remove(
                 "active"
             );
         }
 
 
-        /* =====================================================
-           ESC KEY
-        ====================================================== */
 
         document.addEventListener(
             "keydown",
@@ -1638,6 +1394,7 @@
         );
 
     </script>
+
 
 </body>
 
