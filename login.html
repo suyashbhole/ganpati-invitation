@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="mr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Ganpati Bappa Moraya</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Great+Vibes&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html,
+        body {
+
+            width: 100%;
+            height: 100%;
+
+            overflow: hidden;
+        }
+
+
+        body {
+
+            font-family:
+                "Noto Sans Devanagari",
+                sans-serif;
+
+            background: #210800;
+
+            color: white;
+
+            position: relative;
+        }
+
+
+
+        .background {
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+
+                linear-gradient(
+                    rgba(35, 5, 0, 0.55),
+                    rgba(35, 5, 0, 0.75)
+                ),
+
+                url("images/ganpati-bg.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-repeat: no-repeat;
+
+            z-index: -3;
+
+            animation:
+                backgroundZoom 15s
+                ease-in-out
+                infinite
+                alternate;
+        }
+
+
+        @keyframes backgroundZoom {
+
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.08);
+            }
+        }
+
+
+     
+
+        .overlay {
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    transparent 10%,
+                    rgba(0,0,0,.25) 55%,
+                    rgba(0,0,0,.75) 100%
+                );
+
+            z-index: -2;
+        }
+
+
+       
+
+        .particles {
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            z-index: 1;
+        }
+
+
+        .particle {
+
+            position: absolute;
+
+            width: 4px;
+            height: 4px;
+
+            border-radius: 50%;
+
+            background: #ffd76a;
+
+            box-shadow:
+                0 0 8px #ffd76a,
+                0 0 15px #ff9800;
+
+            animation:
+                particleMove
+                linear
+                infinite;
+        }
+
+
+        @keyframes particleMove {
+
+            from {
+
+                transform:
+                    translateY(100vh);
+
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            to {
+
+                transform:
+                    translateY(-10vh);
+
+                opacity: 0;
+            }
+        }
+
+
+
+        .main-screen {
+
+            width: 100%;
+            height: 100dvh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 15px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .main-content {
+
+            width: min(520px, 94vw);
+
+            text-align: center;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+      
+
+        .om {
+
+            font-size: clamp(
+                55px,
+                5vh,
+                30px
+            );
+
+            color: #ffd76a;
+
+            text-shadow:
+
+                0 0 10px #ffb300,
+
+                0 0 25px #ff8c00;
+
+            margin-bottom: 5px;
+
+            animation:
+                omGlow 2s
+                infinite
+                alternate;
+        }
+
+
+        @keyframes omGlow {
+
+            from {
+
+                text-shadow:
+                    0 0 8px #ffb300;
+            }
+
+            to {
+
+                text-shadow:
+                    0 0 15px #ffb300,
+                    0 0 30px #ff8c00;
+            }
+        }
+
+
+     
+
+        .main-title {
+
+            font-family:
+                "Great Vibes",
+                cursive;
+
+            font-size: clamp(
+                50px,
+                9vw,
+                85px
+            );
+
+            color: #ffd66b;
+
+            line-height: 1;
+
+            text-shadow:
+
+                0 3px 5px #000,
+
+                0 0 20px
+                rgba(255,170,0,.6);
+
+            margin-bottom: 5px;
+        }
+
+
+        .sub-title {
+
+            font-family: Cinzel, serif;
+
+            font-size: clamp(
+                13px,
+                2vw,
+                17px
+            );
+
+            letter-spacing: 3px;
+
+            color: #ffe9ad;
+
+            margin-bottom: 20px;
+        }
+
+
+     
+
+        .menu {
+
+            width: 100%;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+
+        .menu-btn {
+
+            width: 100%;
+
+            height: 58px;
+
+            border-radius: 18px;
+
+            border:
+
+                1px solid
+                rgba(255,210,100,.5);
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(255,184,50,.95),
+                    rgba(214,82,0,.95)
+                );
+
+            color: #421600;
+
+            font-family:
+                "Noto Sans Devanagari",
+                sans-serif;
+
+            font-size: 17px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            box-shadow:
+
+                0 8px 25px
+                rgba(0,0,0,.35),
+
+                0 0 20px
+                rgba(255,160,30,.2);
+
+            transition:
+                .3s;
+        }
+
+
+        .menu-btn:hover {
+
+            transform:
+                translateY(-4px)
+                scale(1.02);
+
+            box-shadow:
+
+                0 12px 30px
+                rgba(0,0,0,.45),
+
+                0 0 30px
+                rgba(255,180,40,.4);
+        }
+
+
+        .menu-btn:active {
+
+            transform:
+                scale(.97);
+        }
+
+
+        .menu-btn span {
+
+            display: block;
+
+            font-size: 12px;
+
+            font-family: Cinzel, serif;
+
+            letter-spacing: 1px;
+
+            opacity: .75;
+
+            margin-top: 2px;
+        }
+
+
+      
+
+        .footer {
+
+            margin-top: 18px;
+
+            color: #ead4a0;
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+        }
+
+
+
+        .popup {
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(15,2,0,.88);
+
+            backdrop-filter:
+                blur(10px);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 15px;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform: scale(1.08);
+
+            transition:
+                .4s;
+
+            z-index: 50;
+        }
+
+
+        .popup.active {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            transform: scale(1);
+        }
+
+
+    
+
+        .popup-card {
+
+            width: min(
+                550px,
+                94vw
+            );
+
+            max-height: 94dvh;
+
+            overflow-y: auto;
+
+            padding:
+                25px 20px;
+
+            text-align: center;
+
+            border-radius: 28px;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(75,12,0,.97),
+                    rgba(25,3,0,.97)
+                );
+
+            border:
+
+                1px solid
+                rgba(255,210,100,.55);
+
+            box-shadow:
+
+                0 0 60px
+                rgba(255,160,20,.25);
+        }
+
+
+
+        .popup-ganpati {
+
+            width: min(
+                220px,
+                45vw
+            );
+
+            max-height: 260px;
+
+            object-fit: contain;
+
+            filter:
+
+                drop-shadow(
+                    0 0 20px
+                    rgba(255,190,60,.7)
+                );
+
+            animation:
+                ganpatiFloat
+                4s
+                ease-in-out
+                infinite;
+        }
+
+
+        @keyframes ganpatiFloat {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0);
+            }
+
+            50% {
+
+                transform:
+                    translateY(-10px);
+            }
+        }
+
+
+        .popup-title {
+
+            font-family:
+                "Great Vibes",
+                cursive;
+
+            color: #ffd66b;
+
+            font-size: clamp(
+                38px,
+                7vw,
+                58px
+            );
+
+            margin: 5px 0;
+        }
+
+
+        .popup-subtitle {
+
+            color: #ffe6a0;
+
+            font-family: Cinzel, serif;
+
+            font-size: 14px;
+
+            margin-bottom: 18px;
+        }
+
+
+      
+
+        .event-buttons {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 12px;
+
+            margin-top: 15px;
+        }
+
+
+        .event-btn {
+
+            min-height: 70px;
+
+            border-radius: 16px;
+
+            border:
+
+                1px solid
+                rgba(255,205,90,.35);
+
+            background:
+
+                rgba(255,180,40,.12);
+
+            color: #ffd66b;
+
+            cursor: pointer;
+
+            font-family:
+                "Noto Sans Devanagari",
+                sans-serif;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition:
+                .3s;
+        }
+
+
+        .event-btn:hover {
+
+            background:
+                rgba(255,180,40,.25);
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 8px 20px
+                rgba(255,160,20,.2);
+        }
+
+
+        .event-btn small {
+
+            display: block;
+
+            font-family: Cinzel, serif;
+
+            font-size: 10px;
+
+            margin-top: 3px;
+
+            color: #e7d2a0;
+        }
+
+
+
+        .media-popup {
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(10,1,0,.92);
+
+            backdrop-filter:
+                blur(10px);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 15px;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            z-index: 100;
+
+            transition:
+                .3s;
+        }
+
+
+        .media-popup.active {
+
+            opacity: 1;
+
+            visibility: visible;
+        }
+
+
+        .media-card {
+
+            width: min(
+                850px,
+                96vw
+            );
+
+            max-height: 94dvh;
+
+            overflow-y: auto;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #4b0b00,
+                    #180300
+                );
+
+            border-radius: 25px;
+
+            padding: 20px;
+
+            border:
+                1px solid
+                rgba(255,210,100,.5);
+
+            text-align: center;
+        }
+
+
+        .media-title {
+
+            color: #ffd66b;
+
+            font-family:
+                "Great Vibes",
+                cursive;
+
+            font-size: 45px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .event-image {
+
+            width: 100%;
+
+            max-height: 330px;
+
+            object-fit: contain;
+
+            border-radius: 15px;
+
+            margin-bottom: 15px;
+
+            background: #000;
+        }
+
+
+        .event-video {
+
+            width: 100%;
+
+            max-height: 350px;
+
+            border-radius: 15px;
+
+            background: #000;
+
+            display: block;
+        }
+
+
+
+        .close-btn {
+
+            margin-top: 15px;
+
+            padding:
+                10px 25px;
+
+            border-radius: 50px;
+
+            border:
+                1px solid #d9a82f;
+
+            background:
+                transparent;
+
+            color: #ffd66b;
+
+            cursor: pointer;
+
+            font-family:
+                "Noto Sans Devanagari",
+                sans-serif;
+
+            transition:
+                .3s;
+        }
+
+
+        .close-btn:hover {
+
+            background: #ffd66b;
+
+            color: #401500;
+        }
+
+
+
+        @media (max-width: 600px) {
+
+            .main-content {
+
+                width: 94vw;
+            }
+
+
+            .main-title {
+
+                font-size: 55px;
+            }
+
+
+            .sub-title {
+
+                font-size: 11px;
+
+                letter-spacing: 1.5px;
+
+                margin-bottom: 15px;
+            }
+
+
+            .menu {
+
+                gap: 9px;
+            }
+
+
+            .menu-btn {
+
+                height: 52px;
+
+                border-radius: 15px;
+
+                font-size: 15px;
+            }
+
+
+            .menu-btn span {
+
+                font-size: 9px;
+            }
+
+
+            .popup-card {
+
+                padding:
+                    18px 15px;
+
+                border-radius: 22px;
+            }
+
+
+            .popup-ganpati {
+
+                width: 160px;
+
+                max-height: 190px;
+            }
+
+
+            .popup-title {
+
+                font-size: 42px;
+            }
+
+
+            .event-buttons {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .event-btn {
+
+                min-height: 55px;
+            }
+
+
+            .media-title {
+
+                font-size: 38px;
+            }
+
+
+            .event-image {
+
+                max-height: 230px;
+            }
+
+
+            .event-video {
+
+                max-height: 240px;
+            }
+        }
+
+
+
+        @media (max-height: 650px) {
+
+            .main-title {
+
+                font-size: 55px;
+            }
+
+
+            .om {
+
+                font-size: 28px;
+            }
+
+
+            .sub-title {
+
+                margin-bottom: 10px;
+            }
+
+
+            .menu {
+
+                gap: 7px;
+            }
+
+
+            .menu-btn {
+
+                height: 45px;
+
+                font-size: 14px;
+            }
+
+
+            .footer {
+
+                display: none;
+            }
+
+
+            .popup-ganpati {
+
+                width: 130px;
+
+                max-height: 150px;
+            }
+
+
+            .popup-card {
+
+                padding: 12px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- BACKGROUND -->
+
+    <div class="background"></div>
+
+    <div class="overlay"></div>
+
+
+    <!-- PARTICLES -->
+
+    <div class="particles"
+         id="particles">
+    </div>
+
+
+    <main class="main-screen">
+
+        <div class="main-content">
+
+            <div class="om">
+
+                ॐ
+
+            </div>
+
+
+            <h1 class="main-title">
+                गणपती बाप्पा मोरया 
+            </h1>
+
+
+            <div class="sub-title">
+                ॥ श्री गणेशाय नमः ॥
+            </div>
+
+
+            <div class="menu">
+
+                <!-- BUTTON 1 -->
+
+                <button
+                    class="menu-btn"
+                    onclick="openGanpatiPopup()">
+
+                    🙏 आराधनाचा राजा
+
+                    <span>
+                        ARADHANACHA RAJA
+                    </span>
+
+                </button>
+
+
+                <!-- BUTTON 2 -->
+
+                <button
+                    class="menu-btn"
+                    onclick="openMedia('aagman')">
+
+                    🪔 आगमन सोहळा
+
+                    <span>
+                        AAGMAN SOHALA
+                    </span>
+
+                </button>
+
+
+                <!-- BUTTON 3 -->
+
+                <button
+                    class="menu-btn"
+                    onclick="openMedia('visarjan')">
+
+                    🌺 विसर्जन सोहळा
+
+                    <span>
+                        VISARJAN SOHALA
+                    </span>
+
+                </button>
+
+            </div>
+
+
+        <div class="footer">
+                ॥ श्री आराधना गणेश मंडळ ॥
+            <br>
+                चौधरीवाडा, न्हावी
+        </div>
+
+        <style>
+            .footer {
+                font-size: 28px;
+                }
+        </style>
+
+    </div>
+
+    </main>
+
+
+
+    <div
+        class="popup"
+        id="ganpatiPopup">
+
+        <div class="popup-card">
+
+            <div class="sub-title">
+                ॥ श्री गणेशाय नमः ॥
+            </div>
+
+
+            <img
+                src="image/ganpati-bg.jpg"
+                class="popup-ganpati"
+                alt="Ganpati Bappa">
+
+
+            <div class="popup-title">
+                आराधनाचा राजा
+            </div>
+
+
+            <div class="popup-subtitle">
+                गणपती बाप्पा मोरया 🙏
+            </div>
+
+
+            <div class="event-buttons">
+
+                <button
+                    class="event-btn"
+                    onclick="openMedia('aagman')">
+
+                    🪔 आगमन सोहळा
+
+                    <small>
+                        IMAGE + VIDEO
+                    </small>
+
+                </button>
+
+
+                <button
+                    class="event-btn"
+                    onclick="openMedia('visarjan')">
+
+                    🌺 विसर्जन सोहळा
+
+                    <small>
+                        IMAGE + VIDEO
+                    </small>
+
+                </button>
+
+            </div>
+
+
+            <button
+                class="close-btn"
+                onclick="closeGanpatiPopup()">
+
+                ← मागे जा
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+   
+
+    <div
+        class="media-popup"
+        id="mediaPopup">
+
+        <div class="media-card">
+
+            <div
+                class="media-title"
+                id="mediaTitle">
+
+                आगमन सोहळा-12/09/2026
+
+            </div>
+
+
+            <img
+                id="eventImage"
+                class="event-image"
+                src=""
+                alt="Event Image">
+
+
+            <video
+                id="eventVideo"
+                class="event-video"
+                controls
+                playsinline>
+
+                <source
+                    id="videoSource"
+                    src=""
+                    type="video/mp4">
+
+                Your browser does not support
+                video.
+
+            </video>
+
+
+            <button
+                class="close-btn"
+                onclick="closeMedia()">
+
+                ← मागे जा
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+
+     
+
+        const particles =
+            document.getElementById(
+                "particles"
+            );
+
+
+        for (
+            let i = 0;
+            i < 35;
+            i++
+        ) {
+
+            const p =
+                document.createElement(
+                    "div"
+                );
+
+
+            p.className =
+                "particle";
+
+
+            p.style.left =
+                Math.random() * 100 + "%";
+
+
+            p.style.animationDuration =
+                (5 + Math.random() * 8)
+                + "s";
+
+
+            p.style.animationDelay =
+                Math.random() * 8
+                + "s";
+
+
+            const size =
+                2 + Math.random() * 4;
+
+
+            p.style.width =
+                size + "px";
+
+
+            p.style.height =
+                size + "px";
+
+
+            particles.appendChild(p);
+        }
+
+
+
+
+        function openGanpatiPopup() {
+
+            document
+                .getElementById(
+                    "ganpatiPopup"
+                )
+                .classList.add("active");
+        }
+
+
+        function closeGanpatiPopup() {
+
+            document
+                .getElementById(
+                    "ganpatiPopup"
+                )
+                .classList.remove("active");
+        }
+
+
+    
+
+        function openMedia(type) {
+
+            const popup =
+                document.getElementById(
+                    "mediaPopup"
+                );
+
+
+            const title =
+                document.getElementById(
+                    "mediaTitle"
+                );
+
+
+            const image =
+                document.getElementById(
+                    "eventImage"
+                );
+
+
+            const video =
+                document.getElementById(
+                    "eventVideo"
+                );
+
+
+            const source =
+                document.getElementById(
+                    "videoSource"
+                );
+
+
+            if (type === "aagman") {
+
+                title.innerHTML =
+                    "आगमन सोहळा - १२-०९-२०२६ 🥁 शिवराज्य बँड, चांदवड" ;
+
+
+                image.src =
+                    "image/aagman.jpg";
+
+
+                source.src =
+                    "videos/aagman.mp4";
+
+            }
+
+
+            else if (type === "visarjan") {
+
+                title.innerHTML =
+                    "विसर्जन सोहळा - २०-०९-२०२६ 🎵 रॉकस्टार बँड ७८, चांदवड";
+
+
+                image.src =
+                    "image/visarjan.jpg";
+
+
+                source.src =
+                    "videos/visarjan.mp4";
+            }
+
+
+            video.load();
+
+
+            popup.classList.add(
+                "active"
+            );
+        }
+
+
+   
+
+        function closeMedia() {
+
+            const popup =
+                document.getElementById(
+                    "mediaPopup"
+                );
+
+
+            const video =
+                document.getElementById(
+                    "eventVideo"
+                );
+
+
+            video.pause();
+
+
+            popup.classList.remove(
+                "active"
+            );
+        }
+
+
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    closeMedia();
+
+                    closeGanpatiPopup();
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

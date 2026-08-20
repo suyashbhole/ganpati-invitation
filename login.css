@@ -1,0 +1,719 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+
+.background {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.30),
+            rgba(80, 20, 0, 0.40)
+        ),
+        url("image/ganpati-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: -1;
+}
+
+
+
+
+.login-container {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;
+
+    z-index: 2;
+}
+
+
+
+
+.login-box {
+
+    width: min(400px, 92vw);
+
+   
+
+    height: min(690px, 94vh);
+
+    padding: 20px 28px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    backdrop-filter: blur(8px);
+
+    border-radius: 22px;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 45px
+        rgba(0, 0, 0, 0.45);
+
+    animation: appear 0.8s ease;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+}
+
+
+
+
+.ganpati-icon {
+
+    width: 65px;
+    height: 65px;
+
+    flex-shrink: 0;
+
+    margin: 0 auto 8px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffb300,
+            #e65100
+        );
+
+    font-size: 32px;
+
+    box-shadow:
+        0 0 20px
+        rgba(255, 152, 0, 0.8);
+
+    animation: glow 2s infinite alternate;
+}
+
+
+
+.om {
+    font-size: 1px;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+
+
+
+h1 {
+
+    color: #d84315;
+
+    font-size: 23px;
+
+    line-height: 1.15;
+
+    margin-bottom: 4px;
+
+    flex-shrink: 0;
+}
+
+h2 {
+
+    color: #6d2c0e;
+
+    font-size: 18px;
+
+    line-height: 1.15;
+
+    margin-bottom: 5px;
+
+    flex-shrink: 0;
+}
+
+.welcome {
+
+    color: #777;
+
+    font-size: 13px;
+
+    margin-bottom: 12px;
+
+    flex-shrink: 0;
+}
+
+
+
+.input-group {
+
+    width: 100%;
+
+    text-align: left;
+
+    margin-bottom: 10px;
+
+    flex-shrink: 0;
+}
+
+.input-group label {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #5d4037;
+
+    font-weight: bold;
+
+    font-size: 13px;
+}
+
+.input-group input {
+
+    width: 100%;
+
+    height: 42px;
+
+    padding: 8px 12px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+
+    border-color: #ff9800;
+
+    box-shadow:
+        0 0 8px
+        rgba(255, 152, 0, 0.4);
+}
+
+
+
+
+.password-box {
+
+    position: relative;
+}
+
+.password-box input {
+
+    padding-right: 42px;
+}
+
+.password-box span {
+
+    position: absolute;
+
+    right: 12px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+
+
+
+.options {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 10px;
+
+    font-size: 12px;
+
+    flex-shrink: 0;
+}
+
+.options a {
+
+    color: #e65100;
+
+    text-decoration: none;
+}
+
+
+
+
+button {
+
+    width: 100%;
+
+    height: 44px;
+
+    padding: 8px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff9800,
+            #e65100
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    flex-shrink: 0;
+}
+
+button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(230, 81, 0, 0.4);
+}
+
+
+
+
+.register {
+
+    margin-top: 10px;
+
+    color: #666;
+
+    font-size: 12px;
+
+    flex-shrink: 0;
+}
+
+.register a {
+
+    color: #e65100;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+
+
+
+.footer {
+
+    margin-top: 10px;
+
+    color: #d84315;
+
+    font-weight: bold;
+
+    font-size: 11px;
+
+    flex-shrink: 0;
+}
+
+
+
+
+.diya {
+
+    position: fixed;
+
+    font-size: 30px;
+
+    z-index: 1;
+
+    animation:
+        float 4s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+.diya1 {
+    left: 6%;
+    top: 20%;
+}
+
+.diya2 {
+    right: 6%;
+    top: 30%;
+
+    animation-delay: 1s;
+}
+
+.diya3 {
+    left: 12%;
+    bottom: 12%;
+
+    animation-delay: 2s;
+}
+
+
+
+
+@keyframes appear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.92);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes glow {
+
+    from {
+
+        box-shadow:
+            0 0 12px
+            rgba(255, 152, 0, 0.5);
+    }
+
+    to {
+
+        box-shadow:
+            0 0 28px
+            rgba(255, 193, 7, 1);
+    }
+}
+
+
+@keyframes float {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-20px);
+    }
+}
+
+
+
+@media (max-height: 800px) {
+
+    .login-box {
+
+        height: 96vh;
+
+        width: min(390px, 90vw);
+
+        padding: 15px 25px;
+    }
+
+    .ganpati-icon {
+
+        width: 58px;
+        height: 58px;
+
+        font-size: 28px;
+
+        margin-bottom: 5px;
+    }
+
+    h1 {
+        font-size: 21px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    .welcome {
+
+        font-size: 12px;
+
+        margin-bottom: 8px;
+    }
+
+    .input-group {
+
+        margin-bottom: 7px;
+    }
+
+    .input-group label {
+
+        font-size: 12px;
+    }
+
+    .input-group input {
+
+        height: 38px;
+
+        font-size: 13px;
+    }
+
+    .options {
+
+        margin-bottom: 7px;
+
+        font-size: 11px;
+    }
+
+    button {
+
+        height: 40px;
+
+        font-size: 14px;
+    }
+
+    .register {
+
+        margin-top: 7px;
+    }
+
+    .footer {
+
+        margin-top: 7px;
+    }
+}
+
+
+
+
+@media (max-height: 650px) {
+
+    .login-box {
+
+        height: 98vh;
+
+        width: min(370px, 90vw);
+
+        padding: 10px 20px;
+    }
+
+    .ganpati-icon {
+
+        width: 48px;
+        height: 48px;
+
+        font-size: 24px;
+
+        margin-bottom: 3px;
+    }
+
+    h1 {
+
+        font-size: 19px;
+
+        margin-bottom: 2px;
+    }
+
+    h2 {
+
+        font-size: 15px;
+
+        margin-bottom: 3px;
+    }
+
+    .welcome {
+
+        font-size: 10px;
+
+        margin-bottom: 5px;
+    }
+
+    .input-group {
+
+        margin-bottom: 5px;
+    }
+
+    .input-group label {
+
+        font-size: 10px;
+
+        margin-bottom: 2px;
+    }
+
+    .input-group input {
+
+        height: 34px;
+
+        padding: 6px 10px;
+
+        font-size: 12px;
+
+        border-radius: 8px;
+    }
+
+    .options {
+
+        font-size: 10px;
+
+        margin-bottom: 5px;
+    }
+
+    button {
+
+        height: 36px;
+
+        font-size: 12px;
+
+        border-radius: 8px;
+    }
+
+    .register {
+
+        margin-top: 5px;
+
+        font-size: 10px;
+    }
+
+    .footer {
+
+        margin-top: 5px;
+
+        font-size: 9px;
+    }
+}
+
+
+
+
+@media (max-width: 480px) {
+
+    .login-container {
+
+        padding: 5px;
+    }
+
+    .login-box {
+
+        width: 96vw;
+
+        height: 96vh;
+
+        padding: 12px 16px;
+
+        border-radius: 18px;
+    }
+
+    .ganpati-icon {
+
+        width: 55px;
+        height: 55px;
+
+        font-size: 27px;
+    }
+
+    h1 {
+
+        font-size: 20px;
+    }
+
+    h2 {
+
+        font-size: 16px;
+    }
+
+    .welcome {
+
+        font-size: 11px;
+    }
+
+    .input-group input {
+
+        height: 38px;
+    }
+
+    button {
+
+        height: 40px;
+    }
+
+    .diya {
+
+        font-size: 22px;
+    }
+}
